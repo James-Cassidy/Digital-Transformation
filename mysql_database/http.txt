@@ -1,0 +1,21 @@
+#insert user into database with random inforamtion
+    # sql = "INSERT INTO UserInformation (email, password, forename, middle_names, surname,\
+    #     dob, gender, address1, address2, address3, city, country, postcode) VALUES\
+    #     ('example@email.com','password', 'John', '', 'Smith', '1990-01-01', 'male',\
+    #     '1 Example Street', '', '', 'Example City', 'GB', 'BT00 000');"
+
+
+#insert user
+http://0.0.0.0:3306/insertUser?email=example@email.com&password=password&forename=John&surname=Smith&dob=1990-01-01&gender=male&address1=1%20Example%20Street%20&city=Example%20City&country=UK&postcode=BT00%20000
+
+#save BloodPressure
+http://0.0.0.0:3306/saveMetricData?userID=2&dataType=BloodPressure&systolic=11&diastolic=10
+
+#save Cortisol
+http://0.0.0.0:3306/saveMetricData?userID=2&dataType=Cortisol&value=11
+
+#save HeartRate
+http://0.0.0.0:3306/saveMetricData?userID=2&dataType=HeartRate&value=11
+
+#retrieve data
+http://0.0.0.0:3306/retrieveDataFromDB?userID=2&dataType=BloodPressure

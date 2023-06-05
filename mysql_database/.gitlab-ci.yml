@@ -1,0 +1,14 @@
+image: ubuntu:18.04
+stages:
+  - test
+
+test:
+  stage: test
+  script:
+    - apt-get update -qy
+    - apt-get install -y python3-pip python3 
+    - pip3 install Flask
+    - pip3 install requests
+    - pip3 install PyMySQL
+    - cd src
+    - python3 -m unittest test
